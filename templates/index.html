@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="SoleTrip" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="SoleTrip" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="SoleTrip" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="SoleTrip" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Hello! My name is SoleTrip</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="/static/bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="/static/app.css">
+</head>
+<script src="/static/bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+<script src="/static/bower_components/angular/angular.js"></script>
+<script src="/static/bower_components/angular-route/angular-route.js"></script>
+<script src="/static/components/version/version.js"></script>
+<script src="/static/components/version/version-directive.js"></script>
+<script src="/static/components/version/interpolate-filter.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=F4a4bb0d9069b3626b55f04d73b204b9"></script>
+<script src="/static/controllers/DataInit_Module.js"></script>
+<body>
+  <div ng-controller="dataController">
+  <p>Init all {{ database.name }} to database : {{database.status}}</p>
+  <button ng-click="initPlane()" ng-hide="planeInited" align="center" width="80%">Init Plane(初始化航班数据表)</button><br />
+  <button ng-click="initCity()" ng-hide="cityInited">Init City(初始化城市数据表)</button><br />
+  <button ng-click="initCountry()" ng-hide="countryInited">Init Country(初始化国家数据表)</button><br />
+  <button ng-click="initHotel()" ng-hide="hotelInited">Init Hotel(初始化酒店数据表)</button><br />
+  <button ng-click="initScenics()" ng-hide="scenicsInited">Init Scenice(初始化景点数据表)</button><br />
+  <button ng-click="initShop()" ng-hide="shopInited">Init Shop(初始化商店数据表)</button><br />
+  <button ng-click="initUser()" ng-hide="userInited">Init User(初始化用户数据表)</button><br />
+  <button ng-click="initPlaneOrder()" ng-hide="planeOrderInited">Init Plane Order(初始化接送机数据表)</button><br />
+  <button ng-click="initInquireOrder()" ng-hide="inquireInited">Init Inquire Order(初始化询价单数据表)</button><br />
+  <button ng-click="initBusinessOrder()" ng-hide="bussinessInited">Init Business Order(初始化订单数据表)</button><br />
+  <button ng-click="initPriceList()" ng-hide="priceInited">Init PriceList(初始化报价单数据表)</button><br />
+  <button ng-click="initStatusMachine()" ng-hide="statusInited">Init StatusMachine(初始化状态机数据表)</button><br />
+  <button ng-click="initCommunication()" ng-hide="communicateInited">Init Communication(初始化实时聊天数据表)</button><br />
+  <button ng-click="initEvaluation()" ng-hide="evaluationInited">Init Evaluation(初始化评价数据表)</button><br />
+  <button ng-click="initComplain()" ng-hide="complainInited">Init Complain(初始化纠纷数据表)</button><br />
+  <button ng-click="initStatusLog()" ng-hide="statusLogInited">Init StatusLog(初始化状态更新数据表)</button><br />
+  </div>
+</body>
+</html>
