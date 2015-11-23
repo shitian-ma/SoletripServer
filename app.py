@@ -15,7 +15,7 @@ app.register_blueprint(todos_view, url_prefix='/todos')
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index2.html')
 
 
 @app.route('/time')

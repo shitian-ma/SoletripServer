@@ -23,7 +23,7 @@
 <script src="/static/controllers/DataInit_Module.js"></script>
 <body>
   <div ng-controller="dataController">
-  <p>Init all {{ database.name }} to database : {{database.status}}</p>
+  <!-- p>Init all  database._name  to database : database._status </p -->
   <button ng-click="initPlane()" ng-hide="planeInited" align="center" width="80%">Init Plane(初始化航班数据表)</button><br />
   <button ng-click="initCity()" ng-hide="cityInited">Init City(初始化城市数据表)</button><br />
   <button ng-click="initCountry()" ng-hide="countryInited">Init Country(初始化国家数据表)</button><br />
