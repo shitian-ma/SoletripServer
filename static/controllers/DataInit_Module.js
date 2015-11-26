@@ -268,9 +268,13 @@ DBInitModule.controller("dataController",
          data: {
 			'type':'0',                 // '0纯导 1纯车 2车兼导 3车和导‘
             'order_user':'test',        // 'user_id'
-			'order_list_path':'test',   // 'file link'
+			'sub_inqire':'test',        // 'file link'
 			'order_name':'test',        //
             'destination_list':'test',  // 'ladon#pairs#...'
+			'checkout_time':'2015-10-18 21:00:00',  // '出发时间'
+			'flight_id':'CA4187',       // '航班号'
+			'night_count':'7',          // '几个夜晚，默认与白天相同'
+			'day_count':'6',            // '天数（白天）'
 			'adute':'0',                // 成人人数
 			'chrildren':'0',            //
 			'triffic_type':'test',      // '车型'
@@ -285,6 +289,33 @@ DBInitModule.controller("dataController",
          }).success(function(){
          $scope.database.status = "success";
 		 $scope.inquireInited = true;
+     }).error(function(){
+         $scope.database.status = "fail";
+     })
+    }
+	
+	$scope.initSubInquireOrder = function() {
+	  $scope.database.name = "init SubInquireOrder database";
+	  $scope.database.status = "starting......";
+	  return $http({
+         method: 'POST',
+         url:'https://api.leancloud.cn/1.1/classes/SubInquireOrder',
+         data: {
+			'type':'0',                 // '0纯导 1纯车 2车兼导 3车和导‘
+            'inquired_id':'test',        // 'user_id'
+			'order_file_path':'test',   // 'file link'
+			'type_name':'test',        //
+            'destination_list':'test',  // 'ladon#pairs#...'
+			'vailabe_time':'0',         //  有效时间
+			'handler':'test',           //
+			'auto_triffic':'0',         // '0否 1是'
+			'auto_index':'0',           // '顺序'
+		    'order_status':'122888'     // 'status'
+		 },  // pass in data as strings
+      headers : { 'Content-Type': 'application/json', 'X-LC-Id':'M0fpy60YKxsgnfHnwktJxyey','X-LC-Sign':'85066a9c2461a5a1b60a3fb4ce0ac34d,1898215632566' }
+         }).success(function(){
+         $scope.database.status = "success";
+		 $scope.subInquireInited = true;
      }).error(function(){
          $scope.database.status = "fail";
      })
@@ -456,6 +487,27 @@ DBInitModule.controller("dataController",
          }).success(function(){
          $scope.database.status = "success";
 		 $scope.statusLogInited = true;
+     }).error(function(){
+         $scope.database.status = "fail";
+     })
+    }
+	
+	$scope.initTypes = function() {
+	  $scope.database.name = "init Types database";
+	  $scope.database.status = "starting......";
+	  return $http({
+         method: 'POST',
+         url:'https://api.leancloud.cn/1.1/classes/Types',
+         data: {
+			'type_id':'1234',         //
+			'status':'4567',       //
+			'name':'Triffic',       //
+			'handler':'4567'           //
+		 },  // pass in data as strings
+         headers : { 'Content-Type': 'application/json', 'X-LC-Id':'M0fpy60YKxsgnfHnwktJxyey','X-LC-Sign':'85066a9c2461a5a1b60a3fb4ce0ac34d,1898215632566' }
+         }).success(function(){
+         $scope.database.status = "success";
+		 $scope.statusTypesInited = true;
      }).error(function(){
          $scope.database.status = "fail";
      })

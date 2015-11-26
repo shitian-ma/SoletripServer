@@ -23,7 +23,7 @@
 <script src="/static/controllers/DataInit_Module.js"></script>
 <body>
   <div ng-controller="dataController">
-  <!-- p>Init all  database._name  to database : database._status </p -->
+  <p>Init all  {{database.name}}  to database : {{database.status}} </p>
   <button ng-click="initPlane()" ng-hide="planeInited" align="center" width="80%">Init Plane(初始化航班数据表)</button><br />
   <button ng-click="initCity()" ng-hide="cityInited">Init City(初始化城市数据表)</button><br />
   <button ng-click="initCountry()" ng-hide="countryInited">Init Country(初始化国家数据表)</button><br />
@@ -33,6 +33,7 @@
   <button ng-click="initUser()" ng-hide="userInited">Init User(初始化用户数据表)</button><br />
   <button ng-click="initPlaneOrder()" ng-hide="planeOrderInited">Init Plane Order(初始化接送机数据表)</button><br />
   <button ng-click="initInquireOrder()" ng-hide="inquireInited">Init Inquire Order(初始化询价单数据表)</button><br />
+  <button ng-click="initSubInquireOrder()" ng-hide="subInquireInited">Init SubInquire Order(初始化子项询价单数据表)</button><br />
   <button ng-click="initBusinessOrder()" ng-hide="bussinessInited">Init Business Order(初始化订单数据表)</button><br />
   <button ng-click="initPriceList()" ng-hide="priceInited">Init PriceList(初始化报价单数据表)</button><br />
   <button ng-click="initStatusMachine()" ng-hide="statusInited">Init StatusMachine(初始化状态机数据表)</button><br />
@@ -40,6 +41,7 @@
   <button ng-click="initEvaluation()" ng-hide="evaluationInited">Init Evaluation(初始化评价数据表)</button><br />
   <button ng-click="initComplain()" ng-hide="complainInited">Init Complain(初始化纠纷数据表)</button><br />
   <button ng-click="initStatusLog()" ng-hide="statusLogInited">Init StatusLog(初始化状态更新数据表)</button><br />
+  <button ng-click="initTypes()" ng-hide="statusTypesInited">Init Business Types(初始化业务类型数据表)</button><br />
   </div>
 </body>
 </html>

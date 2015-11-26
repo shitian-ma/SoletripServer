@@ -1,15 +1,103 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>Welcome to LeanEngine!</title>
+    <title>Welcome to join Soletrip!</title>
     <link rel="stylesheet" href="/static/style.css" type="text/css">
   </head>
-  <body>
-    <div id="container">
-      <h1>LeanEngine</h1>
-      <p>这是 LeanEngine 的示例应用</p>
-      <p><a href="/time">一个简单的动态路由示例</a></p>
-      <p><a href="/todos">一个简单的「TODO 列表」示例</a></p>
+  <script type="text/javascript">
+  function load()  {
+      var user_name_input = document.getElementById('login_user_input');
+	  var user_name_text = document.getElementById('login_user');
+	  var password_text = document.getElementById('login_pass');
+	  var password_text_input = document.getElementById('login_pass_input');
+	  var login_button = document.getElementById('login_button');
+	  var logon_button = document.getElementById('logon_button');
+	  var init_db_link = document.getElementById('init_db');
+	  var screenWidth = document.documentElement.clientWidth;
+	  var screenHight = document.documentElement.clientHeight;
+	  var elemtHight = 30;
+	  user_name_input.select();
+	  password_text_input.select();
+	  user_name_input.style.position = "absolute"; 
+	  user_name_text.style.position = "absolute"; 
+	  password_text.style.position = "absolute"; 
+	  password_text_input.style.position = "absolute"; 
+	  login_button.style.position = "absolute";
+	  logon_button.style.position = "absolute";
+	  init_db_link.style.position = "absolute";
+	  
+	  user_name_input.style.width = "200px";
+	  password_text_input.style.width = "200px";
+	  user_name_text.style.width = "100px";
+	  password_text.style.width = "100px";
+	  login_button.style.width = "99px";
+	  logon_button.style.width = "99px";
+	  
+	  if ( screenWidth < 300 ) {
+	      var top_l = screenHight/2-2.5*elemtHight;
+		  user_name_text.style.width = screenWidth + "px";
+		  user_name_text.style.top = top_l + "px";
+		  user_name_text.style.left = "0px";
+		  
+		  top_l = top_l + elemtHight;
+	      user_name_input.style.width = screenWidth + "px";
+		  user_name_input.style.top = top_l + "px";
+		  user_name_input.style.left = "0px";
+		  
+		  top_l = top_l + elemtHight;
+		  password_text.style.width = screenWidth + "px";
+		  password_text.style.top = top_l + "px";
+		  password_text.style.left = "0px";
+		  
+		  top_l = top_l + elemtHight;
+		  password_text_input.style.width = screenWidth + "px";
+		  password_text_input.style.top = top_l + "px";
+		  password_text_input.style.left = "0px";
+		  
+		  top_l = top_l + elemtHight;
+		  login_button.style.width = screenWidth + "px";
+		  login_button.style.top = top_l + "px";
+		  login_button.style.left = "0px";
+		  
+		  top_l = top_l + elemtHight;
+		  logon_button.style.width = screenWidth + "px";
+		  logon_button.style.top = top_l + "px";
+		  logon_button.style.left = "0px";
+	  }else{
+		  var top_w = screenHight/2-1.5*elemtHight;
+		  user_name_text.style.top = top_w + "px";
+		  user_name_input.style.top = top_w + "px";
+		  top_w = top_w + elemtHight;
+		  password_text.style.top = top_w + "px";
+		  password_text_input.style.top = top_w + "px";
+		  top_w = top_w + elemtHight;
+		  login_button.style.top = top_w + "px";
+		  logon_button.style.top = top_w + "px";
+		  
+		  var left_w = (screenWidth - 300)/2;
+		  user_name_text.style.left = left_w + "px";
+		  password_text.style.left = left_w + "px";
+		  left_w = left_w + 100;
+		  user_name_input.style.left = left_w + "px";
+		  password_text_input.style.left = left_w + "px";
+		  login_button.style.left = left_w + "px";
+		  
+		  left_w = left_w + 103;
+		  logon_button.style.left = left_w + "px";
+	  }
+	  init_db_link.style.top = screenHight - elemtHight + "px";
+	  init_db_link.style.left = screenWidth - 100 + "px";
+  }
+</script>
+
+  <body onload="load()">
+	<div id="container" style="position:absolute; width:100%; height:100%; z-index:-1">    
+    <img src="/static/pic/login.jpg" height="100%" width="100%"/> 
     </div>
+	<a id="login_user">User name :</a><input id="login_user_input" type="text"/ value="User Name">
+    <a id="login_pass">Password  :</a><input id="login_pass_input" type="text"/ placeholder="Password">
+    <input id="login_button" type="button" value="Login" onclick="login"/>
+	<input id="logon_button" type="button" value="Logon" onclick="logon"/>
+	<a id="init_db" href="/index2">Init DB</a>
   </body>
 </html>
