@@ -1,5 +1,9 @@
 eclipse.preferences.version=1
 encoding//static/controllers/DataInit_Module.js=UTF-8
+encoding//views/backHandler.py=utf-8
+encoding//views/login.py=utf-8
+encoding//views/order_list.py=utf-8
+encoding//views/register.py=utf-8
 encoding//views/todos.py=utf-8
 encoding/app.py=utf-8
 encoding/cloud.py=utf-8

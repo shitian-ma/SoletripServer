@@ -220,7 +220,17 @@ DBInitModule.controller("dataController",
          method: 'POST',
          url:'https://api.leancloud.cn/1.1/classes/User2',
          data: {
-			 'cn_name':'Chinese name'    //
+			 'user_id':'test', //
+			 'cn_name':'Chinese name',    //
+			 'en_name':'English name',    //
+			 'address':'CD China',    //
+			 'service_type_list':'[0,1]',    //
+			 'cert_url':'http://343.jpg',                 //
+			 'cert_name':'343.jpg',                  //
+			 'system_score':'100',    //
+			 'custom_score':'100',    //
+			 'company_user_id':'None',    //
+			 'user_type':'personal'    //
 		 },  // pass in data as strings
          headers : { 'Content-Type': 'application/json', 'X-LC-Id':'M0fpy60YKxsgnfHnwktJxyey','X-LC-Sign':'85066a9c2461a5a1b60a3fb4ce0ac34d,1898215632566' }
          }).success(function(){

@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Welcome to join Soletrip!</title>
+    <link rel="stylesheet" href="/static/style.css" type="text/css">
+  </head>
+  <script type="text/javascript">
+  </script>
+  <body>
+	<div id="container" style="position:absolute; width:100%; height:100%; z-index:-1">    
+    <img src="/static/pic/login.jpg" height="100%" width="100%"/> 
+    </div>
+	<form action="/register" method="POST">
+	<a style="position:absolute;width:200px;height:20px;top:50px;left:130px;padding:4px 0px; font-size:20px;">User name :</a>
+	<input type="text" name="username" placeholder="User name" {{{ obj.get('username') }}} style="position:absolute;width:300px;height:20px;top:50px;left:300px;padding:4px 0px; font-size:16px;"><br/><br/>
+	<a style="position:absolute;width:200px;height:20px;top:100px;left:130px;padding:4px 0px; font-size:20px;">Phone number :</a>
+	<input type="text" name="phoneno" placeholder="Phone number" {{{ obj.get('phoneno') }}} style="position:absolute;width:300px;height:20px;top:100px;left:300px;padding:4px 0px; font-size:16px;"><br/><br/>
+    <a style="position:absolute;width:300px;height:20px;top:150px;left:130px;padding:4px 0px; font-size:20px;">Email address :</a>
+	<input type="text" name="email" placeholder="Email@163.com" {{{ obj.get('email') }}} style="position:absolute;width:300px;height:20px;top:150px;left:300px;padding:4px 0px; font-size:16px;"><br/><br/>
+	<a style="position:absolute;width:300px;height:20px;top:200px;left:130px;padding:4px 0px; font-size:20px;">Enter password:</a>
+	<input type="password" name="password" placeholder="......" {{{ obj.get('password') }}} style="position:absolute;width:300px;height:20px;top:200px;left:300px;padding:4px 0px; font-size:16px;"><br/><br/>
+	<a style="position:absolute;width:300px;height:20px;top:250px;left:130px;padding:4px 0px; font-size:20px;">Confirm password:</a>
+	<input type="password" name="password2" placeholder="......" {{{ obj.get('password2') }}} style="position:absolute;width:300px;height:20px;top:250px;left:300px;padding:4px 0px; font-size:16px;"><br/><br/>
+	<input type="submit" value="Register" name="reg"  style="position:absolute;width:150px;height:30px;top:300px;left:300px;padding:4px 0px; font-size:16px;"/><br/><br/>
+	</form>
+	<a style="position:absolute;width:600px;height:20px;top:350px;left:130px;padding:4px 0px; font-size:20px;color:red"> {{{ obj.get('error_message') }}} </a>
+  </body>
+</html>
