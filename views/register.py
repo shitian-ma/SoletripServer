@@ -9,6 +9,7 @@ from flask import redirect
 from flask import render_template
 from flask import request
 from flask import url_for
+from leancloud.user import User
 
 
 register_view = Blueprint('register', __name__)
@@ -73,6 +74,13 @@ def post_response():
         obj_json['error_message'] = "Error: " + \
             error if len(error) > 0 else ""
         return render_template('logon.html', obj=obj_json)
+    else:
+        user = User()
+        user.set("username", username)
+        user.set("password", pss)
+        user.set("email", email)
+        user.set("phone", phoneno)
+        user.sign_up()
     return redirect(url_for('order.index'))
 
 

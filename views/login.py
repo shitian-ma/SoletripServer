@@ -38,9 +38,10 @@ class Login_User(object):
         return None
 
     def verify(self, user, password):
-        User().login(user, password)
+        return User().login(user, password)
 
     def login(self, user, password):
+        print self.verify(user, password)
         role = self.checkRole(user, password)
         if role == Roles.TYPE_ADMIN:
             # render_template('login.html')
@@ -68,7 +69,6 @@ def post_response():
 
 @login_view.route('')
 def index():
-    print "login page!"
     obj_json = {}
     obj_json['error_message'] = ""
     return render_template('index.html', obj=obj_json)

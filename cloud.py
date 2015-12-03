@@ -8,9 +8,6 @@ from app import app
 engine = Engine(app)
 
 
-@engine.define
-def hello(**params):
-    if 'name' in params:
-        return 'Hello, {}!'.format(params['name'])
-    else:
-        return 'Hello, LeanCloud!'
+@engine.before_save('Plane')
+def before_plane_save(plane):
+    print plane
